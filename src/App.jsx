@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage.jsx';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage.jsx';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx';
-import CatalogPage from './pages/CatalogPage/Catalogpage.jsx';
+import CatalogPage from './pages/CatalogPage/CatalogPage.jsx';
 
 function App() {
   return (
