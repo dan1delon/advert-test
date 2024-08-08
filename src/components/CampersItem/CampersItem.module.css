@@ -47,12 +47,6 @@
   text-align: left;
 }
 
-.favorite {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
 .ratingWrapper {
   display: flex;
   gap: 18px;
@@ -62,18 +56,27 @@
   line-height: 24px;
   letter-spacing: 0%;
   text-decoration-line: underline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .location {
   line-height: 24px;
   letter-spacing: 0%;
   text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .priceWrapper {
   display: flex;
   align-items: center;
-  gap: 11px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .description {
@@ -103,6 +106,8 @@
   border-radius: 100px;
   background: rgb(242, 244, 247);
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -117,10 +122,48 @@
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.5%;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: rgb(216, 67, 67);
 }
 
 .icon {
   width: 20px;
   height: 20px;
-  fill: black;
+}
+
+.iconSmall {
+  width: 16px;
+  height: 16px;
+}
+
+.iconHeart {
+  width: 21px;
+  height: 18px;
+}
+
+.favorite {
+  width: 21px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.iconHeart {
+  width: 21px;
+  height: 18px;
+  transition: all 0.3s ease;
+}
+
+.iconHeart:hover {
+  filter: drop-shadow(4px 4px 4px #0000004b);
 }

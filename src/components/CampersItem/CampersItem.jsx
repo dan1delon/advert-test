@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Icon from '../../shared/Icon/Icon';
 import css from './CampersItem.module.css';
 
 const data = {
@@ -56,7 +58,12 @@ const data = {
 };
 
 const CampersItem = () => {
+  const [isFavorite, setIsFavorite] = useState(false);
   const ratingsLength = data.reviews.length;
+
+  const toggleFavorite = () => {
+    setIsFavorite(prevState => !prevState);
+  };
 
   return (
     <li className={css.wrapper}>
@@ -67,52 +74,53 @@ const CampersItem = () => {
             <h3 className={css.name}>{data.name}</h3>
             <div className={css.priceWrapper}>
               <p className={css.price}>€{data.price}.00</p>
-              <button type="button" className={css.favorite}></button>
+              <button
+                type="button"
+                className={`${css.favorite} ${isFavorite ? 'active' : ''}`}
+                onClick={toggleFavorite}
+              >
+                <Icon
+                  iconId={isFavorite ? 'icon-heart-pressed' : 'icon-heart'}
+                  className={css.iconHeart}
+                />
+              </button>
             </div>
           </div>
           <div className={css.ratingWrapper}>
             <p className={css.rating}>
+              <Icon iconId="icon_star" className={css.iconSmall} />
               {data.rating}({ratingsLength} Reviews)
             </p>
-            <p className={css.location}>{data.location}</p>
+            <p className={css.location}>
+              <Icon iconId="icon-map-pin" className={css.iconSmall} />
+              {data.location}
+            </p>
           </div>
         </div>
         <p className={css.description}>{data.description}</p>
         <ul className={css.categoriesList}>
           <li className={css.categoryItem}>
-            <svg className={css.icon}>
-              <use href="#icon-users"></use>
-            </svg>
+            <Icon iconId="icon-users" className={css.icon} />
             {data.adults} adults
           </li>
           <li className={css.categoryItem}>
-            <svg className={css.icon}>
-              <use href="#icon-mechanic"></use>
-            </svg>
+            <Icon iconId="icon-mechanic" className={css.icon} />
             {data.transmission}
           </li>
           <li className={css.categoryItem}>
-            <svg className={css.icon}>
-              <use href="#icon-petrol"></use>
-            </svg>
+            <Icon iconId="icon-petrol" className={css.icon} />
             {data.engine}
           </li>
           <li className={css.categoryItem}>
-            <svg className={css.icon}>
-              <use href="#icon-food"></use>
-            </svg>
+            <Icon iconId="icon-food" className={css.icon} />
             {data.details.kitchen} kitchen
           </li>
           <li className={css.categoryItem}>
-            <svg className={css.icon}>
-              <use href="#icon-bed"></use>
-            </svg>
+            <Icon iconId="icon-bed" className={css.icon} />
             {data.details.beds} beds
           </li>
           <li className={css.categoryItem}>
-            <svg className={css.icon}>
-              <use href="#icon-conditioner"></use>
-            </svg>
+            <Icon iconId="icon-wind" className={css.icon} />
             {data.details.airConditioner} AC
           </li>
         </ul>
