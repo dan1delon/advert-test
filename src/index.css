@@ -5,6 +5,10 @@
   color: rgb(16, 24, 40);
 }
 
+body {
+  margin: 0;
+}
+
 ul {
   list-style: none;
   padding: 0;

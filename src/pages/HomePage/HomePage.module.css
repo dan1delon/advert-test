@@ -13,6 +13,7 @@
     ),
     url(../../../public/img/background.webp);
   overflow: hidden;
+  z-index: -1;
 }
 
 .wrapper {
