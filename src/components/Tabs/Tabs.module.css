@@ -1,0 +1,53 @@
+.tabsWrapper {
+  margin-bottom: 44px;
+}
+
+.tabs {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 24px;
+}
+
+.tabLink {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgb(16, 24, 40);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 0;
+}
+
+.tabLink::after {
+  max-width: 85px;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -26px;
+  border: 2px solid rgb(228, 72, 72);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabLink.active::after {
+  opacity: 1;
+}
+
+.divider {
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+}
+
+.bottomWrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.tabContent {
+  width: 430px;
+}

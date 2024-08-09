@@ -1,0 +1,84 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0%;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.ratingWrapper {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.rating {
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-decoration-line: underline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.location {
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.iconSmall {
+  width: 16px;
+  height: 16px;
+}
+
+.gallery {
+  display: flex;
+  gap: 16px;
+}
+
+.img {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.description {
+  color: rgb(71, 84, 103);
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background: rgb(217, 217, 217);
+  border-radius: 7px;
+}

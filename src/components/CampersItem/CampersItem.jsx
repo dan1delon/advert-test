@@ -1,6 +1,8 @@
 import css from './CampersItem.module.css';
 import CategoriesList from '../CategoriesList/CategoriesList';
 import AdsMainInfo from '../AdsMainInfo/AdsMainInfo';
+import { useModal } from '../../context/modalContext.jsx';
+import DetailsModal from '../DetailsModal/DetailsModal';
 
 const data = {
   _id: '1',
@@ -58,13 +60,19 @@ const data = {
 };
 
 const CampersItem = () => {
+  const { openModal } = useModal();
+
+  const handleClick = () => {
+    openModal(<DetailsModal data={data} />);
+  };
+
   return (
     <li className={css.wrapper}>
       <img src={data.gallery[0]} alt={data.name} className={css.img} />
       <div className={css.info}>
         <AdsMainInfo data={data} />
         <CategoriesList data={data} />
-        <button type="button" className={css.btn}>
+        <button type="button" className={css.btn} onClick={handleClick}>
           Show More
         </button>
       </div>
