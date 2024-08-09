@@ -2,6 +2,7 @@ import { useState } from 'react';
 import css from './Tabs.module.css';
 import Features from '../Features/Features';
 import Reviews from '../Reviews/Reviews';
+import BookingForm from '../BookingForm/BookingForm';
 
 const Tabs = ({ data }) => {
   const [activeTab, setActiveTab] = useState('Features');
@@ -38,7 +39,7 @@ const Tabs = ({ data }) => {
           {activeTab === 'Features' && <Features data={data} />}
           {activeTab === 'Reviews' && <Reviews data={data} />}
         </div>
-        <div className={css.form}></div>
+        <BookingForm />
       </div>
     </div>
   );
