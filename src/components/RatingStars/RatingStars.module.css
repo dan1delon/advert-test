@@ -1,0 +1,17 @@
+.ratingStars {
+  display: flex;
+  gap: 4px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.filledStar {
+  fill: rgb(255, 197, 49);
+}
+
+.emptyStar {
+  fill: rgb(242, 244, 247);
+}

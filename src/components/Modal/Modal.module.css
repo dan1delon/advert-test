@@ -14,8 +14,21 @@
   border-radius: 15px;
   padding: 40px;
   margin: 0 auto;
-  width: 902px;
   overflow: auto;
+}
+
+.modalContainer::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.modalContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalContainer::-webkit-scrollbar-thumb {
+  background: rgb(217, 217, 217);
+  border-radius: 7px;
 }
 
 .modalButtonClose {

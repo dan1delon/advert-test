@@ -1,9 +1,10 @@
+import css from './ErrorMessage.module.css';
+
 const ErrorMessage = () => {
   return (
-    <div>
-      <p>
-        Oops! Something went wrong while fetching movies. Please try again
-        later.
+    <div className={css.wrapper}>
+      <p className={css.text}>
+        Oops! Something went wrong while fetching ads. Please try again later.
       </p>
     </div>
   );

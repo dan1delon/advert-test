@@ -55,6 +55,12 @@
   height: 78px;
 }
 
+.textarea::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
 .btn {
   width: 166px;
   border: none;
@@ -77,6 +83,7 @@
 .icon {
   width: 20px;
   height: 20px;
+  pointer-events: none;
 }
 
 .btnCalendar {

@@ -11,7 +11,10 @@ const DetailsModal = ({ data }) => {
         <h3 className={css.name}>{data.name}</h3>
         <div className={css.ratingWrapper}>
           <p className={css.rating}>
-            <Icon iconId="icon_star" className={css.iconSmall} />
+            <Icon
+              iconId="icon_star"
+              className={`${css.iconSmall} ${css.ratingIcon}`}
+            />
             {data.rating}({ratingsLength} Reviews)
           </p>
           <p className={css.location}>

@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, removeFavorite } from '../../redux/favorites/slice';
 import Icon from '../../shared/Icon/Icon';
 import css from './AdsMainInfo.module.css';
 
 const AdsMainInfo = ({ data }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const ratingsLength = data.reviews.length;
+  const dispatch = useDispatch();
+  const favorites = useSelector(state => state.favorites);
+  const isFavorite = Object.prototype.hasOwnProperty.call(favorites, data._id);
 
   const toggleFavorite = () => {
-    setIsFavorite(prevState => !prevState);
+    if (isFavorite) {
+      dispatch(removeFavorite(data));
+    } else {
+      dispatch(addFavorite(data));
+    }
   };
 
   return (
@@ -31,8 +37,11 @@ const AdsMainInfo = ({ data }) => {
         </div>
         <div className={css.ratingWrapper}>
           <p className={css.rating}>
-            <Icon iconId="icon_star" className={css.iconSmall} />
-            {data.rating}({ratingsLength} Reviews)
+            <Icon
+              iconId="icon_star"
+              className={`${css.iconSmall} ${css.ratingIcon}`}
+            />
+            {data.rating}({data.reviews.length} Reviews)
           </p>
           <p className={css.location}>
             <Icon iconId="icon-map-pin" className={css.iconSmall} />

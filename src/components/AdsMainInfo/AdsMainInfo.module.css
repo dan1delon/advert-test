@@ -75,6 +75,10 @@
   height: 16px;
 }
 
+.ratingIcon {
+  fill: rgb(255, 197, 49);
+}
+
 .favorite {
   width: 21px;
   height: 18px;

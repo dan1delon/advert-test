@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoWrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.nameWrapper {
+}
+
+.namePicture {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: rgb(242, 244, 247);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(228, 72, 72);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.rating {
+}
+
+.text {
+  color: rgb(71, 84, 103);
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+}

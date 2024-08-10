@@ -4,13 +4,20 @@ import App from './App.jsx';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { ModalProvider } from './context/index.js';
+import { persistor, store } from './redux/store.js';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ModalProvider>
-        <App />
-      </ModalProvider>
+      <Provider store={store}>
+        <ModalProvider>
+          <PersistGate persistor={persistor}>
+            <App />
+          </PersistGate>
+        </ModalProvider>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

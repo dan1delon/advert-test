@@ -9,23 +9,6 @@ import Flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
 const BookingForm = () => {
-  const dateInputRef = useRef(null);
-  let flatpickrInstance = useRef(null);
-
-  useEffect(() => {
-    if (dateInputRef.current) {
-      flatpickrInstance.current = Flatpickr(dateInputRef.current, {
-        dateFormat: 'Y-m-d',
-      });
-    }
-  }, []);
-
-  const handleClickCalendar = () => {
-    if (flatpickrInstance.current) {
-      flatpickrInstance.current.open();
-    }
-  };
-
   const FormSchema = Yup.object({
     name: Yup.string()
       .min(2, 'must contain at least 2 characters')
@@ -40,6 +23,7 @@ const BookingForm = () => {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(FormSchema),
@@ -51,6 +35,30 @@ const BookingForm = () => {
       comment: '',
     },
   });
+
+  const dateInputRef = useRef(null);
+  let flatpickrInstance = useRef(null);
+
+  useEffect(() => {
+    if (dateInputRef.current) {
+      if (flatpickrInstance.current) {
+        flatpickrInstance.current.destroy();
+      }
+      flatpickrInstance.current = Flatpickr(dateInputRef.current, {
+        dateFormat: 'Y-m-d',
+        disableMobile: true,
+        onChange: (selectedDates, dateStr) => {
+          setValue('bookingDate', dateStr);
+        },
+      });
+    }
+  }, [dateInputRef, setValue]);
+
+  const handleClickCalendar = () => {
+    if (flatpickrInstance.current) {
+      flatpickrInstance.current.open();
+    }
+  };
 
   const onSubmit = data => {
     console.log(data);

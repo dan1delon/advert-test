@@ -1,6 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .campersList {
   max-width: 888px;
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.btn {
+  width: 145px;
+  height: 56px;
+  margin: 0 auto;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.5%;
+  padding: 16px 32px 16px 32px;
+  box-sizing: border-box;
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  border-radius: 200px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  border: 1px solid rgb(228, 72, 72);
 }
