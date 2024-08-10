@@ -1,5 +1,5 @@
-import { INITIAL_STATE } from '../constants';
 import { createSlice } from '@reduxjs/toolkit';
+import { INITIAL_STATE } from '../constants';
 import { fetchAds } from './operations';
 
 const handlePending = state => {

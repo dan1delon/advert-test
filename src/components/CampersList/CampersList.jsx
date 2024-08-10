@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import CampersItem from '../CampersItem/CampersItem';
 import css from './CampersList.module.css';
-import { selectAdverts } from '../../redux/ads/selectors';
 import { selectFavorites } from '../../redux/favorites/selectors';
+import { selectFilteredAdverts } from '../../redux/filter/selectors';
 import { useState } from 'react';
 
 const CampersList = ({ showFavorites = false }) => {
-  const fetchedAds = useSelector(selectAdverts);
+  const fetchedAds = useSelector(selectFilteredAdverts);
   const favorites = useSelector(selectFavorites);
   const [visibleAdsCount, setVisibleAdsCount] = useState(4);
 
