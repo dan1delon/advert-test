@@ -88,12 +88,12 @@ const Sidebar = () => {
           </label>
           <label
             className={clsx(css.labelCheckbox, {
-              [css.active]: selectedEquipments.includes('transmission'),
+              [css.active]: selectedEquipments.includes('automatic'),
             })}
           >
             <input
               type="checkbox"
-              value="transmission"
+              value="automatic"
               {...register('equipment')}
               className={clsx(css.checkboxHidden)}
               onChange={handleCheckboxChange}

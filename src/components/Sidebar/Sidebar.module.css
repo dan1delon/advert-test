@@ -84,6 +84,10 @@
   transition: all 0.3s;
 }
 
+.labelCheckbox:hover {
+  border: 1px solid rgb(228, 72, 72);
+}
+
 .labelCheckbox.active {
   border: 1px solid rgb(228, 72, 72);
 }
@@ -120,6 +124,10 @@
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
   transition: all 0.3s;
+}
+
+.labelRadio:hover {
+  border: 1px solid rgb(228, 72, 72);
 }
 
 .labelRadio.active {
