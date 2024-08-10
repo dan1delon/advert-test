@@ -14,9 +14,9 @@ const BookingForm = () => {
       .min(2, 'must contain at least 2 characters')
       .max(64)
       .required(),
-    email: Yup.string().email().required(),
-    bookingDate: Yup.string(),
-    comment: Yup.string().max(120),
+    email: Yup.string().email().required('Please enter a valid email'),
+    bookingDate: Yup.string().required('Please select a date'),
+    comment: Yup.string().max(200, 'Must be 200 characters or less'),
   });
 
   const {
@@ -24,6 +24,7 @@ const BookingForm = () => {
     handleSubmit,
     reset,
     setValue,
+    clearErrors,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(FormSchema),
@@ -49,10 +50,11 @@ const BookingForm = () => {
         disableMobile: true,
         onChange: (selectedDates, dateStr) => {
           setValue('bookingDate', dateStr);
+          clearErrors('bookingDate');
         },
       });
     }
-  }, [dateInputRef, setValue]);
+  }, [dateInputRef, setValue, clearErrors]);
 
   const handleClickCalendar = () => {
     if (flatpickrInstance.current) {
@@ -63,6 +65,7 @@ const BookingForm = () => {
   const onSubmit = data => {
     console.log(data);
     reset();
+    window.location.reload();
   };
 
   return (
