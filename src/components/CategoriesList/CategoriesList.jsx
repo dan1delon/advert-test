@@ -87,6 +87,12 @@ const CategoriesList = ({ data, limit }) => {
         Microwave
       </li>
     ),
+    data.details.hob !== 0 && (
+      <li key="hob" className={css.categoryItem}>
+        <Icon iconId="icon-hob" className={css.icon} />
+        {data.details.hob} hob
+      </li>
+    ),
   ].filter(Boolean);
 
   const limitedItems = limit ? items.slice(0, limit) : items;

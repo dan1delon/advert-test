@@ -100,4 +100,10 @@
 <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" stroke="#000" d="M24 8l-16 16"></path>
 <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" stroke="#000" d="M8 8l16 16"></path>
 </svg>
+<svg id="icon-hob" width="20" height="20" viewBox="0 0 32 32">
+<path fill="none" stroke="#101828" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.4" d="M28 6.656c0.352 0 0.688 0.144 0.928 0.4 0.256 0.24 0.4 0.576 0.4 0.944v17.328c0 0.352-0.144 0.688-0.4 0.944-0.24 0.24-0.576 0.384-0.928 0.384h-24c-0.368 0-0.704-0.144-0.944-0.384-0.256-0.256-0.4-0.592-0.4-0.944v-17.328c0-0.368 0.144-0.704 0.4-0.944 0.24-0.256 0.576-0.4 0.944-0.4h24zM12 6.656v20"></path>
+<path fill="none" stroke="#101828" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M7.328 11.328v2.672M24.656 10.656l-8 11.344"></path>
+<path d="M7.328 16.656c0.736 0 1.328 0.592 1.328 1.344 0 0.736-0.592 1.328-1.328 1.328s-1.328-0.592-1.328-1.328c0-0.752 0.592-1.344 1.328-1.344z"></path>
+<path d="M7.328 20.656c0.736 0 1.328 0.592 1.328 1.344 0 0.736-0.592 1.328-1.328 1.328s-1.328-0.592-1.328-1.328c0-0.752 0.592-1.344 1.328-1.344z"></path>
+</svg>
 </svg>
