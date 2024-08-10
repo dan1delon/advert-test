@@ -17,6 +17,7 @@ const CatalogPage = () => {
   useEffect(() => {
     dispatch(fetchAds());
   }, [dispatch]);
+
   return (
     <>
       {error && <ErrorMessage />}

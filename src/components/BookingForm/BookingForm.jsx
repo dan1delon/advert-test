@@ -48,6 +48,8 @@ const BookingForm = () => {
       flatpickrInstance.current = Flatpickr(dateInputRef.current, {
         dateFormat: 'Y-m-d',
         disableMobile: true,
+        minDate: 'today',
+        mode: 'range',
         onChange: (selectedDates, dateStr) => {
           setValue('bookingDate', dateStr);
           clearErrors('bookingDate');

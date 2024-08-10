@@ -91,7 +91,9 @@ img {
 }
 
 .flatpickr-next-month {
-  position: static;
+  position: relative;
+  width: 16px;
+  height: 9px;
 }
 
 .flatpickr-day {
@@ -118,9 +120,4 @@ img {
   letter-spacing: 0%;
   text-align: center;
   text-transform: uppercase;
-}
-
-.flatpickr-next-month {
-  width: 16px;
-  height: 9px;
 }
