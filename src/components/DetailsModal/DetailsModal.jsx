@@ -1,6 +1,7 @@
 import Icon from '../../shared/Icon/Icon';
 import css from './DetailsModal.module.css';
 import Tabs from '../Tabs/Tabs';
+import clsx from 'clsx';
 
 const DetailsModal = ({ data }) => {
   const ratingsLength = data.reviews.length;
@@ -13,9 +14,9 @@ const DetailsModal = ({ data }) => {
           <p className={css.rating}>
             <Icon
               iconId="icon_star"
-              className={`${css.iconSmall} ${css.ratingIcon}`}
+              className={clsx(css.iconSmall, css.ratingIcon)}
             />
-            {data.rating}({ratingsLength} Reviews)
+            {data.rating} ({ratingsLength} Reviews)
           </p>
           <p className={css.location}>
             <Icon iconId="icon-map-pin" className={css.iconSmall} />
@@ -25,9 +26,9 @@ const DetailsModal = ({ data }) => {
         <p className={css.price}>€{data.price}.00</p>
       </div>
       <div className={css.gallery}>
-        <img src={data.gallery[0]} alt={data.name} className={css.img} />
-        <img src={data.gallery[1]} alt={data.name} className={css.img} />
-        <img src={data.gallery[2]} alt={data.name} className={css.img} />
+        {data.gallery.slice(0, 3).map((imgSrc, index) => (
+          <img key={index} src={imgSrc} alt={data.name} className={css.img} />
+        ))}
       </div>
       <p className={css.description}>{data.description}</p>
       <Tabs data={data} />

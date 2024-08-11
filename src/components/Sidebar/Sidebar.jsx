@@ -5,10 +5,11 @@ import { useDispatch } from 'react-redux';
 import {
   changeEquipmentFilter,
   changeLocationFilter,
+  changeTransmissionFilter,
   changeTypeFilter,
 } from '../../redux/filter/slice';
 import Icon from '../../shared/Icon/Icon';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -20,35 +21,39 @@ const Sidebar = () => {
     handleSubmit,
     reset,
     setValue,
-    getValues,
+
     formState: { errors },
   } = useForm({
     mode: 'onSubmit',
     defaultValues: {
       location: '',
-      type: '',
       equipment: [],
+      type: '',
+      transmission: '',
     },
   });
+
+  useEffect(() => {
+    setValue('equipment', selectedEquipments);
+  }, [selectedEquipments, setValue]);
 
   const onSubmit = data => {
     dispatch(changeLocationFilter(data.location));
     dispatch(changeTypeFilter(data.type));
-    dispatch(changeEquipmentFilter(selectedEquipments));
+    dispatch(changeEquipmentFilter(data.equipment));
+    dispatch(changeTransmissionFilter(data.transmission));
+
     reset();
+    setSelectedEquipments([]);
+    setSelectedType('');
   };
 
   const handleCheckboxChange = event => {
     const value = event.target.value;
-    const checked = event.target.checked;
     setSelectedEquipments(prev =>
-      checked ? [...prev, value] : prev.filter(item => item !== value)
-    );
-    setValue(
-      'equipment',
-      checked
-        ? [...(getValues('equipment') || []), value]
-        : (getValues('equipment') || []).filter(item => item !== value)
+      event.target.checked
+        ? [...prev, value]
+        : prev.filter(item => item !== value)
     );
   };
 
@@ -94,7 +99,7 @@ const Sidebar = () => {
             <input
               type="checkbox"
               value="automatic"
-              {...register('equipment')}
+              {...register('transmission')}
               className={clsx(css.checkboxHidden)}
               onChange={handleCheckboxChange}
             />

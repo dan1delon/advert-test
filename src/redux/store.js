@@ -17,7 +17,7 @@ import { filtersReducer } from './filter/slice';
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['adverts'],
+  blacklist: ['adverts, filters'],
 };
 
 const persistedReducer = persistReducer(persistConfig, favoritesReducer);

@@ -1,27 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  location: '',
+  equipment: [],
+  type: '',
+  transmission: '',
+};
+
 const filtersSlice = createSlice({
   name: 'filters',
-  initialState: {
-    location: '',
-    equipment: [],
-    type: '',
-  },
+  initialState,
   reducers: {
     changeLocationFilter(state, action) {
       state.location = action.payload;
     },
     changeEquipmentFilter(state, action) {
-      const equipment = action.payload;
-      state.equipment = equipment;
+      state.equipment = action.payload;
     },
     changeTypeFilter(state, action) {
       state.type = action.payload;
     },
+    changeTransmissionFilter(state, action) {
+      state.transmission = action.payload;
+    },
     resetFilters(state) {
-      state.location = '';
-      state.equipment = [];
-      state.type = '';
+      Object.assign(state, initialState);
     },
   },
 });
@@ -30,6 +33,8 @@ export const {
   changeLocationFilter,
   changeEquipmentFilter,
   changeTypeFilter,
+  changeTransmissionFilter,
   resetFilters,
 } = filtersSlice.actions;
+
 export const filtersReducer = filtersSlice.reducer;

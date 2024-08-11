@@ -42,9 +42,6 @@ const BookingForm = () => {
 
   useEffect(() => {
     if (dateInputRef.current) {
-      if (flatpickrInstance.current) {
-        flatpickrInstance.current.destroy();
-      }
       flatpickrInstance.current = Flatpickr(dateInputRef.current, {
         dateFormat: 'Y-m-d',
         disableMobile: true,
@@ -56,7 +53,13 @@ const BookingForm = () => {
         },
       });
     }
-  }, [dateInputRef, setValue, clearErrors]);
+
+    return () => {
+      if (flatpickrInstance.current) {
+        flatpickrInstance.current.destroy();
+      }
+    };
+  }, [setValue, clearErrors]);
 
   const handleClickCalendar = () => {
     if (flatpickrInstance.current) {
